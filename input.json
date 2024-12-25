@@ -1,0 +1,458 @@
+  {
+  "depot_coord": [55.7963, 49.1088],
+  "vehicle_capacity": 30,
+  "deliveries": [
+    {
+      "id": "D1",
+      "coord": [55.8010, 49.1106],
+      "priority": "medium",
+      "demand": 2,
+      "items": [{"guid": "electronics", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [600, 840],
+      "service_time": 10
+    },
+    {
+      "id": "D2",
+      "coord": [55.7885, 49.1212],
+      "priority": "high",
+      "demand": 4,
+      "items": [{"guid": "furniture", "count": 1}, {"guid": "electronics", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [480, 720],
+      "service_time": 20
+    },
+    {
+      "id": "D3",
+      "coord": [55.7801, 49.1675],
+      "priority": "low",
+      "demand": 1,
+      "items": [{"guid": "clothing", "count": 1}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [540, 1020],
+      "service_time": 5
+    },
+    {
+      "id": "D4",
+      "coord": [55.8117, 49.0510],
+      "priority": "medium",
+      "demand": 3,
+      "items": [{"guid": "food", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [480, 900],
+      "service_time": 15
+    },
+    {
+      "id": "D5",
+      "coord": [55.8540, 49.1065],
+      "priority": "high",
+      "demand": 2,
+      "items": [{"guid": "electronics", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [600, 840],
+      "service_time": 12
+    },
+    {
+      "id": "D6",
+      "coord": [55.7468, 49.1635],
+      "priority": "low",
+      "demand": 5,
+      "items": [{"guid": "furniture", "count": 5}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [720, 1080],
+      "service_time": 25
+    },
+    {
+      "id": "D7",
+      "coord": [55.8090, 49.1300],
+      "priority": "medium",
+      "demand": 3,
+      "items": [{"guid": "clothing", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [540, 960],
+      "service_time": 10
+    },
+    {
+      "id": "D8",
+      "coord": [55.8222, 49.0789],
+      "priority": "high",
+      "demand": 6,
+      "items": [{"guid": "food", "count": 6}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [480, 720],
+      "service_time": 20
+    },
+    {
+      "id": "D9",
+      "coord": [55.7920, 49.1450],
+      "priority": "low",
+      "demand": 2,
+      "items": [{"guid": "electronics", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [600, 1080],
+      "service_time": 8
+    },
+    {
+      "id": "D10",
+      "coord": [55.8300, 49.1500],
+      "priority": "medium",
+      "demand": 1,
+      "items": [{"guid": "clothing", "count": 1}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [360, 780],
+      "service_time": 5
+    }
+  ],
+  "warehouses": [
+    {
+      "id": "WH1",
+      "coord": [55.7974, 49.1069],
+      "stock": {
+        "electronics": 30,
+        "furniture": 15,
+        "clothing": 25,
+        "food": 20
+      },
+      "capacity": 250,
+      "usage": 80
+    },
+    {
+      "id": "WH2",
+      "coord": [55.7650, 49.1680],
+      "stock": {
+        "furniture": 20,
+        "food": 30,
+        "clothing": 10
+      },
+      "capacity": 200,
+      "usage": 70
+    },
+    {
+      "id": "WH3",
+      "coord": [55.8120, 49.1200],
+      "stock": {
+        "electronics": 40,
+        "clothing": 15,
+        "furniture": 5
+      },
+      "capacity": 180,
+      "usage": 50
+    }
+  ]
+}
+
+{
+  "depot_coord": [59.9311, 30.3609],
+  "vehicle_capacity": 25,
+  "deliveries": [
+    {
+      "id": "1",
+      "coord": [59.9398, 30.3146],
+      "priority": "high",
+      "demand": 4,
+      "items": [{"guid": "item1", "count": 4}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [540, 720],
+      "service_time": 15
+    },
+    {
+      "id": "2",
+      "coord": [59.9276, 30.3374],
+      "priority": "medium",
+      "demand": 2,
+      "items": [{"guid": "item2", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [480, 900],
+      "service_time": 10
+    },
+    {
+      "id": "3",
+      "coord": [59.9150, 30.3456],
+      "priority": "low",
+      "demand": 3,
+      "items": [{"guid": "item3", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [600, 840],
+      "service_time": 12
+    },
+    {
+      "id": "4",
+      "coord": [59.9489, 30.3892],
+      "priority": "medium",
+      "demand": 5,
+      "items": [{"guid": "item4", "count": 5}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [720, 1080],
+      "service_time": 20
+    },
+    {
+      "id": "5",
+      "coord": [59.9371, 30.4070],
+      "priority": "high",
+      "demand": 1,
+      "items": [{"guid": "item5", "count": 1}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [300, 600],
+      "service_time": 8
+    },
+    {
+      "id": "6",
+      "coord": [59.9100, 30.2700],
+      "priority": "low",
+      "demand": 3,
+      "items": [{"guid": "item6", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [480, 1020],
+      "service_time": 10
+    },
+    {
+      "id": "7",
+      "coord": [59.9500, 30.2200],
+      "priority": "medium",
+      "demand": 2,
+      "items": [{"guid": "item7", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [360, 840],
+      "service_time": 5
+    },
+    {
+      "id": "8",
+      "coord": [59.9700, 30.3000],
+      "priority": "high",
+      "demand": 6,
+      "items": [{"guid": "item8", "count": 6}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [600, 780],
+      "service_time": 18
+    },
+    {
+      "id": "9",
+      "coord": [59.9200, 30.3800],
+      "priority": "low",
+      "demand": 4,
+      "items": [{"guid": "item9", "count": 4}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [480, 1080],
+      "service_time": 15
+    },
+    {
+      "id": "10",
+      "coord": [59.9600, 30.3500],
+      "priority": "medium",
+      "demand": 3,
+      "items": [{"guid": "item10", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [540, 960],
+      "service_time": 10
+    }
+  ],
+  "warehouses": [
+    {
+      "id": "WH1",
+      "coord": [59.9333, 30.3069],
+      "stock": {
+        "item1": 15,
+        "item2": 20,
+        "item5": 10,
+        "item8": 12
+      },
+      "capacity": 250,
+      "usage": 90
+    },
+    {
+      "id": "WH2",
+      "coord": [59.9100, 30.3200],
+      "stock": {
+        "item3": 30,
+        "item6": 25,
+        "item9": 20
+      },
+      "capacity": 200,
+      "usage": 70
+    },
+    {
+      "id": "WH3",
+      "coord": [59.9500, 30.3400],
+      "stock": {
+        "item4": 40,
+        "item7": 18,
+        "item10": 10
+      },
+      "capacity": 180,
+      "usage": 50
+    }
+  ]
+}
+
+
+{
+  "depot_coord": [55.7522, 37.6156],
+  "vehicle_capacity": 20,
+  "deliveries": [
+    {
+      "id": "1",
+      "coord": [55.7601, 37.6200],
+      "priority": "high",
+      "demand": 3,
+      "items": [{"guid": "item1", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [480, 720],
+      "service_time": 10
+    },
+    {
+      "id": "2",
+      "coord": [55.7518, 37.6173],
+      "priority": "medium",
+      "demand": 1,
+      "items": [{"guid": "item2", "count": 1}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [600, 840],
+      "service_time": 5
+    },
+    {
+      "id": "3",
+      "coord": [55.7432, 37.6056],
+      "priority": "low",
+      "demand": 2,
+      "items": [{"guid": "item3", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [540, 900],
+      "service_time": 8
+    },
+    {
+      "id": "4",
+      "coord": [55.7643, 37.6345],
+      "priority": "medium",
+      "demand": 4,
+      "items": [{"guid": "item4", "count": 4}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [480, 1020],
+      "service_time": 15
+    },
+    {
+      "id": "5",
+      "coord": [55.7515, 37.6438],
+      "priority": "high",
+      "demand": 1,
+      "items": [{"guid": "item5", "count": 1}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [300, 600],
+      "service_time": 5
+    },
+    {
+      "id": "6",
+      "coord": [55.7361, 37.6258],
+      "priority": "low",
+      "demand": 3,
+      "items": [{"guid": "item6", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [720, 1080],
+      "service_time": 10
+    },
+    {
+      "id": "7",
+      "coord": [55.7525, 37.6000],
+      "priority": "medium",
+      "demand": 2,
+      "items": [{"guid": "item7", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [360, 960],
+      "service_time": 12
+    },
+    {
+      "id": "8",
+      "coord": [55.7700, 37.5900],
+      "priority": "high",
+      "demand": 5,
+      "items": [{"guid": "item8", "count": 5}],
+      "refused": false,
+      "origin_warehouse": "WH1",
+      "time_window": [600, 840],
+      "service_time": 20
+    },
+    {
+      "id": "9",
+      "coord": [55.7400, 37.6700],
+      "priority": "low",
+      "demand": 2,
+      "items": [{"guid": "item9", "count": 2}],
+      "refused": false,
+      "origin_warehouse": "WH2",
+      "time_window": [480, 1080],
+      "service_time": 15
+    },
+    {
+      "id": "10",
+      "coord": [55.7605, 37.6456],
+      "priority": "medium",
+      "demand": 3,
+      "items": [{"guid": "item10", "count": 3}],
+      "refused": false,
+      "origin_warehouse": "WH3",
+      "time_window": [540, 900],
+      "service_time": 10
+    }
+  ],
+  "warehouses": [
+    {
+      "id": "WH1",
+      "coord": [55.7530, 37.6200],
+      "stock": {
+        "item1": 10,
+        "item2": 20,
+        "item5": 15
+      },
+      "capacity": 200,
+      "usage": 50
+    },
+    {
+      "id": "WH2",
+      "coord": [55.7400, 37.6000],
+      "stock": {
+        "item3": 30,
+        "item6": 25,
+        "item9": 10
+      },
+      "capacity": 150,
+      "usage": 60
+    },
+    {
+      "id": "WH3",
+      "coord": [55.7600, 37.6300],
+      "stock": {
+        "item4": 20,
+        "item7": 18,
+        "item10": 5
+      },
+      "capacity": 180,
+      "usage": 40
+    }
+  ]
+}
