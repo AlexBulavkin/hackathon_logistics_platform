@@ -1,0 +1,323 @@
+2024-12-21 22:16:35,637 - httpx - INFO - HTTP Request: GET http://testserver/healthcheck "HTTP/1.1 200 OK"
+2024-12-21 22:17:24,675 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:17:24,677 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=True, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50)]
+2024-12-21 22:17:24,678 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:17:34,702 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (480, 1020)]
+2024-12-21 22:17:34,703 - app.services.optimization - INFO - Время обслуживания: [0, 5, 10]
+2024-12-21 22:17:34,704 - app.services.optimization - INFO - Спрос: [0, 0, 10]
+2024-12-21 22:17:34,705 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 0]
+2024-12-21 22:17:34,705 - app.services.optimization - INFO - Времена прибытия: [455, 465, 480, 510]
+2024-12-21 22:17:34,705 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:17:34,708 - app.services.optimization - INFO - Отказ на доставку D1. GUID: REFUSED_D1
+2024-12-21 22:17:34,708 - app.services.optimization - INFO - Товары доставки D1 возвращены на склад W1.
+
+2024-12-21 22:17:34,709 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:17:34,710 - app.services.optimization - INFO -   Склад W1 usage=50/100, stock={'itemA': 10}
+2024-12-21 22:17:34,711 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:17:34,712 - app.services.optimization - WARNING - Неверный индекс узла -1 в route_plan.
+2024-12-21 22:17:34,712 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.77,37.61;55.751244,37.618423
+2024-12-21 22:17:34,713 - app.services.optimization - INFO - Фактический порядок доставки: []
+2024-12-21 22:17:34,714 - app.services.optimization - INFO - Ожидаемый порядок доставки: []
+2024-12-21 22:17:34,715 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:17:34,716 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:17:34,717 - app.routes.logistics - INFO - Ответ отправлен: route_order=[] osm_url='' message='Решение не найдено (все доставки пропущены)'
+2024-12-21 22:17:34,723 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:17:34,745 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 422 Unprocessable Entity"
+2024-12-21 22:17:34,758 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:17:34,759 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=10)], refused=True, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=95), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemA': 10}, capacity=80, usage=80)]
+2024-12-21 22:17:34,759 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:17:44,764 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (480, 1020)]
+2024-12-21 22:17:44,765 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 10]
+2024-12-21 22:17:44,766 - app.services.optimization - INFO - Спрос: [0, 0, 0, 10]
+2024-12-21 22:17:44,767 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 0]
+2024-12-21 22:17:44,768 - app.services.optimization - INFO - Времена прибытия: [440, 450, 465, 480, 520]
+2024-12-21 22:17:44,770 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:17:44,774 - app.services.optimization - INFO - Отказ на доставку D1. GUID: REFUSED_D1
+2024-12-21 22:17:44,775 - app.services.optimization - INFO - Товары доставки D1 возвращены на склад W1.
+
+2024-12-21 22:17:44,777 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:17:44,777 - app.services.optimization - INFO -   Склад W1 usage=95/100, stock={'itemA': 10}
+2024-12-21 22:17:44,778 - app.services.optimization - INFO -   Склад W2 usage=80/80, stock={'itemA': 10}
+2024-12-21 22:17:44,778 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:17:44,779 - app.services.optimization - WARNING - Неверный индекс узла -1 в route_plan.
+2024-12-21 22:17:44,780 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.751244,37.618423
+2024-12-21 22:17:44,781 - app.services.optimization - INFO - Фактический порядок доставки: []
+2024-12-21 22:17:44,781 - app.services.optimization - INFO - Ожидаемый порядок доставки: []
+2024-12-21 22:17:44,782 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:17:44,782 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:17:44,783 - app.routes.logistics - INFO - Ответ отправлен: route_order=[] osm_url='' message='Решение не найдено (все доставки пропущены)'
+2024-12-21 22:17:44,787 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:17:44,799 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 422 Unprocessable Entity"
+2024-12-21 22:17:45,237 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:17:45,238 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=30 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=15, items=[ItemInfo(guid='itemA', count=10)], refused=True, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=90), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemA': 10}, capacity=80, usage=80)]
+2024-12-21 22:17:45,238 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:17:55,242 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (480, 1020)]
+2024-12-21 22:17:55,242 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 10]
+2024-12-21 22:17:55,243 - app.services.optimization - INFO - Спрос: [0, 0, 0, 15]
+2024-12-21 22:17:55,243 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 0]
+2024-12-21 22:17:55,243 - app.services.optimization - INFO - Времена прибытия: [440, 450, 465, 480, 520]
+2024-12-21 22:17:55,244 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:17:55,245 - app.services.optimization - INFO - Отказ на доставку D1. GUID: REFUSED_D1
+2024-12-21 22:17:55,245 - app.services.optimization - INFO - Товары доставки D1 возвращены на склад W1.
+
+2024-12-21 22:17:55,246 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:17:55,246 - app.services.optimization - INFO -   Склад W1 usage=90/100, stock={'itemA': 10}
+2024-12-21 22:17:55,247 - app.services.optimization - INFO -   Склад W2 usage=80/80, stock={'itemA': 10}
+2024-12-21 22:17:55,247 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:17:55,247 - app.services.optimization - WARNING - Неверный индекс узла -1 в route_plan.
+2024-12-21 22:17:55,248 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.751244,37.618423
+2024-12-21 22:17:55,248 - app.services.optimization - INFO - Фактический порядок доставки: []
+2024-12-21 22:17:55,249 - app.services.optimization - INFO - Ожидаемый порядок доставки: []
+2024-12-21 22:17:55,249 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:17:55,249 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:17:55,250 - app.routes.logistics - INFO - Ответ отправлен: route_order=[] osm_url='' message='Решение не найдено (все доставки пропущены)'
+2024-12-21 22:17:55,252 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:17:55,260 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 422 Unprocessable Entity"
+2024-12-21 22:17:55,273 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:17:55,273 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10), DeliveryAddress(id='D2', coord=(55.78, 37.62), priority='medium', demand=20, items=[ItemInfo(guid='itemB', count=10)], refused=False, origin_warehouse='W2', time_window=(600, 1080), service_time=15), DeliveryAddress(id='D3', coord=(55.79, 37.63), priority='low', demand=5, items=[ItemInfo(guid='itemC', count=2)], refused=False, origin_warehouse='W1', time_window=(540, 1140), service_time=5)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10, 'itemC': 5}, capacity=100, usage=50), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemB': 10}, capacity=80, usage=30), Warehouse(id='W3', coord=(55.75, 37.61), stock={'itemD': 20}, capacity=60, usage=10)]
+2024-12-21 22:17:55,274 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:17:55,274 - app.services.optimization - INFO - Доставка ID: D2, Координаты: (55.78, 37.62), Приоритет: medium
+2024-12-21 22:17:55,275 - app.services.optimization - INFO - Доставка ID: D3, Координаты: (55.79, 37.63), Приоритет: low
+2024-12-21 22:18:05,276 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (0, 1440), (480, 1020), (600, 1080), (540, 1140)]
+2024-12-21 22:18:05,277 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 5, 10, 15, 5]
+2024-12-21 22:18:05,277 - app.services.optimization - INFO - Спрос: [0, 0, 0, 0, 10, 20, 5]
+2024-12-21 22:18:05,277 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 4, 5, 6, 0]
+2024-12-21 22:18:05,278 - app.services.optimization - INFO - Времена прибытия: [525, 535, 550, 565, 580, 600, 625, 690]
+2024-12-21 22:18:05,278 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:18:05,279 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:05,279 - app.services.optimization - INFO -   Склад W1 usage=43/100, stock={'itemA': 5, 'itemC': 3}
+2024-12-21 22:18:05,280 - app.services.optimization - INFO -   Склад W2 usage=20/80, stock={'itemB': 0}
+2024-12-21 22:18:05,280 - app.services.optimization - INFO -   Склад W3 usage=10/60, stock={'itemD': 20}
+2024-12-21 22:18:05,281 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:05,281 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.75,37.61;55.77,37.61;55.78,37.62;55.79,37.63;55.751244,37.618423
+2024-12-21 22:18:05,281 - app.services.optimization - INFO - Фактический порядок доставки: ['D1', 'D2', 'D3']
+2024-12-21 22:18:05,282 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D1', 'D2', 'D3']
+2024-12-21 22:18:05,282 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:05,282 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:05,283 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D1', 'D2', 'D3'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.75,37.61;55.77,37.61;55.78,37.62;55.79,37.63;55.751244,37.618423' message='OK'
+2024-12-21 22:18:05,285 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:05,292 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:05,293 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D4', coord=(55.8, 37.64), priority='critical', demand=10, items=[ItemInfo(guid='itemD', count=5)], refused=False, origin_warehouse='W3', time_window=(450, 1000), service_time=10), DeliveryAddress(id='D2', coord=(55.78, 37.62), priority='high', demand=15, items=[ItemInfo(guid='itemB', count=10)], refused=False, origin_warehouse='W2', time_window=(600, 1080), service_time=15), DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='low', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10), DeliveryAddress(id='D3', coord=(55.79, 37.63), priority='medium', demand=5, items=[ItemInfo(guid='itemC', count=2)], refused=False, origin_warehouse='W1', time_window=(540, 1140), service_time=5), DeliveryAddress(id='D5', coord=(55.81, 37.65), priority='urgent', demand=8, items=[ItemInfo(guid='itemE', count=3)], refused=False, origin_warehouse='W3', time_window=(420, 1100), service_time=7)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10, 'itemC': 5}, capacity=100, usage=50), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemB': 10}, capacity=80, usage=30), Warehouse(id='W3', coord=(55.8, 37.64), stock={'itemD': 10, 'itemE': 5}, capacity=90, usage=40)]
+2024-12-21 22:18:05,293 - app.services.optimization - INFO - Доставка ID: D4, Координаты: (55.8, 37.64), Приоритет: critical
+2024-12-21 22:18:05,293 - app.services.optimization - INFO - Доставка ID: D2, Координаты: (55.78, 37.62), Приоритет: high
+2024-12-21 22:18:05,294 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: low
+2024-12-21 22:18:05,294 - app.services.optimization - INFO - Доставка ID: D3, Координаты: (55.79, 37.63), Приоритет: medium
+2024-12-21 22:18:05,294 - app.services.optimization - INFO - Доставка ID: D5, Координаты: (55.81, 37.65), Приоритет: urgent
+2024-12-21 22:18:15,296 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (0, 1440), (450, 1000), (600, 1080), (480, 1020), (540, 1140), (420, 1100)]
+2024-12-21 22:18:15,296 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 5, 10, 15, 10, 5, 7]
+2024-12-21 22:18:15,297 - app.services.optimization - INFO - Спрос: [0, 0, 0, 0, 10, 15, 10, 5, 8]
+2024-12-21 22:18:15,297 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 4, 8, 5, 7, 6, 0]
+2024-12-21 22:18:15,297 - app.services.optimization - INFO - Времена прибытия: [458, 468, 483, 498, 513, 563, 600, 635, 650, 720]
+2024-12-21 22:18:15,298 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:18:15,299 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:15,299 - app.services.optimization - INFO -   Склад W1 usage=43/100, stock={'itemA': 5, 'itemC': 3}
+2024-12-21 22:18:15,300 - app.services.optimization - INFO -   Склад W2 usage=20/80, stock={'itemB': 0}
+2024-12-21 22:18:15,300 - app.services.optimization - INFO -   Склад W3 usage=32/90, stock={'itemD': 5, 'itemE': 2}
+2024-12-21 22:18:15,300 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:15,301 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.8,37.64;55.8,37.64;55.81,37.65;55.78,37.62;55.79,37.63;55.77,37.61;55.751244,37.618423
+2024-12-21 22:18:15,301 - app.services.optimization - INFO - Фактический порядок доставки: ['D4', 'D5', 'D2', 'D3', 'D1']
+2024-12-21 22:18:15,302 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D4', 'D5', 'D2', 'D3', 'D1']
+2024-12-21 22:18:15,302 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:15,302 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:15,303 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D4', 'D5', 'D2', 'D3', 'D1'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.8,37.64;55.8,37.64;55.81,37.65;55.78,37.62;55.79,37.63;55.77,37.61;55.751244,37.618423' message='OK'
+2024-12-21 22:18:15,305 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:15,312 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:15,313 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=20 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=1000, items=[ItemInfo(guid='itemA', count=10)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50)]
+2024-12-21 22:18:15,313 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:25,316 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (480, 1020)]
+2024-12-21 22:18:25,317 - app.services.optimization - INFO - Время обслуживания: [0, 5, 10]
+2024-12-21 22:18:25,317 - app.services.optimization - INFO - Спрос: [0, 0, 1000]
+2024-12-21 22:18:25,318 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 0]
+2024-12-21 22:18:25,318 - app.services.optimization - INFO - Времена прибытия: [0, 10, 25]
+2024-12-21 22:18:25,319 - app.services.optimization - INFO - Пропущенные узлы: [2]
+2024-12-21 22:18:25,320 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:25,320 - app.services.optimization - INFO -   Склад W1 usage=50/100, stock={'itemA': 10}
+2024-12-21 22:18:25,321 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:25,321 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.751244,37.618423
+2024-12-21 22:18:25,322 - app.services.optimization - INFO - Фактический порядок доставки: []
+2024-12-21 22:18:25,322 - app.services.optimization - INFO - Ожидаемый порядок доставки: []
+2024-12-21 22:18:25,323 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:25,323 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:25,324 - app.routes.logistics - INFO - Ответ отправлен: route_order=[] osm_url='' message='Решение не найдено (все доставки пропущены)'
+2024-12-21 22:18:25,327 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:25,339 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:25,340 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=20 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=15, items=[ItemInfo(guid='itemA', count=10)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50)]
+2024-12-21 22:18:25,340 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:25,340 - app.services.optimization - ERROR - Запрос к OSRM не удался: OSRM service is down
+Traceback (most recent call last):
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 190, in build_subproblem
+    resp = requests.get(url, timeout=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: OSRM service is down
+2024-12-21 22:18:25,345 - app.services.optimization - ERROR - Ошибка в run_optimization: OSRM service is down
+Traceback (most recent call last):
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 460, in run_optimization
+    sub_data = build_subproblem(deliveries_input, data.depot_coord, warehouses)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 190, in build_subproblem
+    resp = requests.get(url, timeout=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: OSRM service is down
+2024-12-21 22:18:25,347 - app.routes.logistics - ERROR - Необработанное исключение при расчете маршрута: OSRM service is down
+Traceback (most recent call last):
+  File "C:\Users\Аслан\Downloads\prij\app\routes\logistics.py", line 27, in calculate_route
+    result = run_optimization(data)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 460, in run_optimization
+    sub_data = build_subproblem(deliveries_input, data.depot_coord, warehouses)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 190, in build_subproblem
+    resp = requests.get(url, timeout=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: OSRM service is down
+2024-12-21 22:18:25,352 - app.utils.error_handler - ERROR - HTTPException: Внутренняя ошибка сервера - Path: /api/v1/calculate-route
+2024-12-21 22:18:25,357 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 500 Internal Server Error"
+2024-12-21 22:18:25,375 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:25,376 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=20 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=15, items=[ItemInfo(guid='itemA', count=10)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50)]
+2024-12-21 22:18:25,377 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:25,379 - app.services.optimization - ERROR - Недопустимая подматрица OSRM
+2024-12-21 22:18:25,380 - app.services.optimization - ERROR - Ошибка в run_optimization: Недопустимая подматрица OSRM
+Traceback (most recent call last):
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 460, in run_optimization
+    sub_data = build_subproblem(deliveries_input, data.depot_coord, warehouses)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 199, in build_subproblem
+    raise Exception("Недопустимая подматрица OSRM")
+Exception: Недопустимая подматрица OSRM
+2024-12-21 22:18:25,382 - app.routes.logistics - ERROR - Необработанное исключение при расчете маршрута: Недопустимая подматрица OSRM
+Traceback (most recent call last):
+  File "C:\Users\Аслан\Downloads\prij\app\routes\logistics.py", line 27, in calculate_route
+    result = run_optimization(data)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 460, in run_optimization
+    sub_data = build_subproblem(deliveries_input, data.depot_coord, warehouses)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Аслан\Downloads\prij\app\services\optimization.py", line 199, in build_subproblem
+    raise Exception("Недопустимая подматрица OSRM")
+Exception: Недопустимая подматрица OSRM
+2024-12-21 22:18:25,385 - app.utils.error_handler - ERROR - HTTPException: Внутренняя ошибка сервера - Path: /api/v1/calculate-route
+2024-12-21 22:18:25,389 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 500 Internal Server Error"
+2024-12-21 22:18:25,414 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:25,416 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=False, origin_warehouse='W1', time_window=(480, 600), service_time=10), DeliveryAddress(id='D2', coord=(55.78, 37.62), priority='medium', demand=15, items=[ItemInfo(guid='itemB', count=5)], refused=False, origin_warehouse='W2', time_window=(570, 660), service_time=15)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemB': 10}, capacity=80, usage=30)]
+2024-12-21 22:18:25,416 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:25,417 - app.services.optimization - INFO - Доставка ID: D2, Координаты: (55.78, 37.62), Приоритет: medium
+2024-12-21 22:18:35,421 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (480, 600), (570, 660)]
+2024-12-21 22:18:35,421 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 10, 15]
+2024-12-21 22:18:35,422 - app.services.optimization - INFO - Спрос: [0, 0, 0, 10, 15]
+2024-12-21 22:18:35,422 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 4, 0]
+2024-12-21 22:18:35,423 - app.services.optimization - INFO - Времена прибытия: [510, 520, 535, 550, 570, 625]
+2024-12-21 22:18:35,423 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:18:35,424 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:35,424 - app.services.optimization - INFO -   Склад W1 usage=45/100, stock={'itemA': 5}
+2024-12-21 22:18:35,425 - app.services.optimization - INFO -   Склад W2 usage=25/80, stock={'itemB': 5}
+2024-12-21 22:18:35,425 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:35,425 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423
+2024-12-21 22:18:35,426 - app.services.optimization - INFO - Фактический порядок доставки: ['D1', 'D2']
+2024-12-21 22:18:35,426 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D1', 'D2']
+2024-12-21 22:18:35,427 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:35,427 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:35,428 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D1', 'D2'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423' message='OK'
+2024-12-21 22:18:35,432 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:35,443 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:35,444 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=True, origin_warehouse='W1', time_window=(480, 1020), service_time=10), DeliveryAddress(id='D2', coord=(55.78, 37.62), priority='medium', demand=20, items=[ItemInfo(guid='itemB', count=10)], refused=False, origin_warehouse='W2', time_window=(600, 1080), service_time=15)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10, 'itemC': 5}, capacity=100, usage=50), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemB': 10}, capacity=80, usage=30)]
+2024-12-21 22:18:35,445 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:35,445 - app.services.optimization - INFO - Доставка ID: D2, Координаты: (55.78, 37.62), Приоритет: medium
+2024-12-21 22:18:45,446 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (480, 1020), (600, 1080)]
+2024-12-21 22:18:45,447 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 10, 15]
+2024-12-21 22:18:45,448 - app.services.optimization - INFO - Спрос: [0, 0, 0, 10, 20]
+2024-12-21 22:18:45,449 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 4, 0]
+2024-12-21 22:18:45,450 - app.services.optimization - INFO - Времена прибытия: [540, 550, 565, 580, 600, 655]
+2024-12-21 22:18:45,450 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:18:45,452 - app.services.optimization - INFO - Отказ на доставку D1. GUID: REFUSED_D1
+2024-12-21 22:18:45,453 - app.services.optimization - INFO - Товары доставки D1 возвращены на склад W2.
+
+2024-12-21 22:18:45,454 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:45,454 - app.services.optimization - INFO -   Склад W1 usage=45/100, stock={'itemA': 5, 'itemC': 5}
+2024-12-21 22:18:45,455 - app.services.optimization - INFO -   Склад W2 usage=25/80, stock={'itemB': 0, 'itemA': 5}
+2024-12-21 22:18:45,455 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:45,456 - app.services.optimization - WARNING - Неверный индекс узла -1 в route_plan.
+2024-12-21 22:18:45,456 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423
+2024-12-21 22:18:45,457 - app.services.optimization - INFO - Фактический порядок доставки: ['D2']
+2024-12-21 22:18:45,459 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D2']
+2024-12-21 22:18:45,460 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:45,460 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:45,461 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D2'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423' message='OK'
+2024-12-21 22:18:45,471 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:45,497 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:45,502 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=20 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=15, items=[ItemInfo(guid='itemA', count=10)], refused=False, origin_warehouse='W1', time_window=(480, 1020), service_time=10)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10}, capacity=100, usage=50)]
+2024-12-21 22:18:45,505 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:55,514 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (480, 1020)]
+2024-12-21 22:18:55,515 - app.services.optimization - INFO - Время обслуживания: [0, 5, 10]
+2024-12-21 22:18:55,516 - app.services.optimization - INFO - Спрос: [0, 0, 15]
+2024-12-21 22:18:55,519 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 0]
+2024-12-21 22:18:55,520 - app.services.optimization - INFO - Времена прибытия: [455, 465, 480, 510]
+2024-12-21 22:18:55,521 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:18:55,523 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:18:55,523 - app.services.optimization - INFO -   Склад W1 usage=40/100, stock={'itemA': 0}
+2024-12-21 22:18:55,524 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:18:55,526 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.77,37.61;55.751244,37.618423
+2024-12-21 22:18:55,527 - app.services.optimization - INFO - Фактический порядок доставки: ['D1']
+2024-12-21 22:18:55,527 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D1']
+2024-12-21 22:18:55,528 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:18:55,528 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:18:55,529 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D1'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.77,37.61;55.751244,37.618423' message='OK'
+2024-12-21 22:18:55,532 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
+2024-12-21 22:18:55,540 - app.routes.logistics - INFO - Получен запрос на /calculate-route
+2024-12-21 22:18:55,541 - app.services.optimization - INFO - Получены данные: depot_coord=(55.751244, 37.618423) vehicle_capacity=50 deliveries=[DeliveryAddress(id='D1', coord=(55.77, 37.61), priority='high', demand=10, items=[ItemInfo(guid='itemA', count=5)], refused=True, origin_warehouse='W1', time_window=(480, 1020), service_time=10), DeliveryAddress(id='D2', coord=(55.78, 37.62), priority='medium', demand=20, items=[ItemInfo(guid='itemB', count=10)], refused=False, origin_warehouse='W2', time_window=(600, 1080), service_time=15)] warehouses=[Warehouse(id='W1', coord=(55.76, 37.615), stock={'itemA': 10, 'itemC': 5}, capacity=100, usage=50), Warehouse(id='W2', coord=(55.765, 37.62), stock={'itemB': 10}, capacity=80, usage=30)]
+2024-12-21 22:18:55,541 - app.services.optimization - INFO - Доставка ID: D1, Координаты: (55.77, 37.61), Приоритет: high
+2024-12-21 22:18:55,542 - app.services.optimization - INFO - Доставка ID: D2, Координаты: (55.78, 37.62), Приоритет: medium
+2024-12-21 22:19:05,543 - app.services.optimization - INFO - Временные окна: [(0, 1440), (0, 1440), (0, 1440), (480, 1020), (600, 1080)]
+2024-12-21 22:19:05,544 - app.services.optimization - INFO - Время обслуживания: [0, 5, 5, 10, 15]
+2024-12-21 22:19:05,544 - app.services.optimization - INFO - Спрос: [0, 0, 0, 10, 20]
+2024-12-21 22:19:05,545 - app.services.optimization - INFO - Маршрутные узлы: [0, 1, 2, 3, 4, 0]
+2024-12-21 22:19:05,545 - app.services.optimization - INFO - Времена прибытия: [540, 550, 565, 580, 600, 655]
+2024-12-21 22:19:05,546 - app.services.optimization - INFO - Пропущенные узлы: []
+2024-12-21 22:19:05,547 - app.services.optimization - INFO - Отказ на доставку D1. GUID: REFUSED_D1
+2024-12-21 22:19:05,547 - app.services.optimization - INFO - Товары доставки D1 возвращены на склад W2.
+
+2024-12-21 22:19:05,547 - app.services.optimization - INFO - [handle_refusal] Текущие остатки по складам:
+2024-12-21 22:19:05,548 - app.services.optimization - INFO -   Склад W1 usage=45/100, stock={'itemA': 5, 'itemC': 5}
+2024-12-21 22:19:05,548 - app.services.optimization - INFO -   Склад W2 usage=25/80, stock={'itemB': 0, 'itemA': 5}
+2024-12-21 22:19:05,548 - app.services.optimization - INFO - -- Конец обработки отказов --
+
+2024-12-21 22:19:05,549 - app.services.optimization - WARNING - Неверный индекс узла -1 в route_plan.
+2024-12-21 22:19:05,549 - app.services.optimization - INFO - Сгенерированный URL для OSM: https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423
+2024-12-21 22:19:05,549 - app.services.optimization - INFO - Фактический порядок доставки: ['D2']
+2024-12-21 22:19:05,550 - app.services.optimization - INFO - Ожидаемый порядок доставки: ['D2']
+2024-12-21 22:19:05,550 - app.services.optimization - INFO - Оптимизация успешно завершена.
+2024-12-21 22:19:05,551 - app.routes.logistics - INFO - Результат оптимизации успешно сгенерирован
+2024-12-21 22:19:05,551 - app.routes.logistics - INFO - Ответ отправлен: route_order=['D2'] osm_url='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=55.751244,37.618423;55.76,37.615;55.765,37.62;55.77,37.61;55.78,37.62;55.751244,37.618423' message='OK'
+2024-12-21 22:19:05,554 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/calculate-route "HTTP/1.1 200 OK"
