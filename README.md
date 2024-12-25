@@ -26,3 +26,6 @@ import logging
 
 # cd app
 # python -m uvicorn main:app --reload --port 5555
+
+
+Тестовые входные данные расположены в файле input.json
